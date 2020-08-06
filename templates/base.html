@@ -1,0 +1,128 @@
+{% load static %}
+        <div class="intro-container">
+            <div class="intro-article">
+                <div class="intro-title">
+                    <h1 class="title">Hello</h1> <div class="intro-welcome">et bienvenue !</div>
+                </div>
+                <p class="intro-name">Je m'appelle</p><b>nicolas talbot.</b>
+                <p class="intro-web">Je suis développeur web, sensible à la qualité et 
+                    aux bonnes pratiques du web (opQuast).</p>
+            </div>
+            <div class="intro-image"></div> 
+        </div>
+    </header>
+
+    <main>
+        <svg id="skills-anchor" class="polygon-up-on-right">
+            <use xlink:href="#svg-up-on-right">
+                <symbol id="svg-up-on-right" viewbox="0 0 200 30" preserveAspectRatio="none">
+                    <polygon points="200 30,0 30,200 0">
+                </symbol>
+            </use>
+        </svg>
+        <section class="articles">
+            <article class="article" id="languages">
+                <dix class="img-container">
+                    <img  class="fallout" src="{% static 'images/Fallout.png' %}" alt="old computer from fallout game">
+                </dix>
+                <div class="skills-container">
+                    <h3>Mes projets</h3>
+                    <ul class="btn-small-flex">
+                        <li>HTML</li>
+                        <li>CSS</li>
+                        <li>SCSS</li>
+                        <li>jQuery</li>
+                        <li>Javascript</li>
+                        <li>PHP</li>
+                        <li>Python</li>
+                        <li>Django</li>
+                        <li>Wordpress</li>
+                        <li>MySQL</li>
+                        <li>Ajax</li>
+                        <li>Git</li>
+                    </ul>
+                </div>
+                <div class="article-intro"> 
+                    <h2 class="article-title">languages</h2>
+                    <p class="article-languages">
+                        Avant de commencer ma formation de Développeur, j'ai essayé d'apprendre à programmer en Python, avant tout pour savoir si programmer me plaisait vraiment. Ce qui est drôle quand on y pense, c'est qu'aujourd'hui, j'ai développé une grande affinité avec les languages back-end. PHP et Python ont été un véritable coup de coeur, j'adore concevoir des sites avec eux.
+                    </p>
+                    <p class="article-languages">
+                       Le front-end était quand à lui assez flou au départ, ce n'est qu'en me lançant sur mon portfolio que j'ai vraiment appris à apprécier le fait de devoir tout calculer de A à Z, de la maquette graphique faite avec Figma jusqu'à la réalisation d'une base de données.
+                    </p>
+                    <p class="article-languages">En bref, j'aspire vraiment à grandir en tant que Dev Web, que ce soit en front-end ou en back-end.
+                    </p>
+                </div>
+            </article>
+            <svg class="polygon-below-left">
+                <use xlink:href="#svg-below-left">
+                    <symbol id="svg-below-left" viewbox="0 0 200 30" preserveAspectRatio="none">
+                        <polygon points="200 0,0 30,0 0">
+                    </symbol>
+                </use>
+            </svg> 
+
+            <article class="article" id="projects">
+                <h2 class="projects">Projets</h2>
+                <div class="cards-container">
+                    <div class="cards">
+                        <img src="" alt="" class="card-img">
+                        <div class="paraphrase">
+                            <p>aaa</p>
+                        </div>
+                    </div>
+                    <div class="cards">
+                        <img src="" alt="" class="card-img">
+                        <p>aaa</p>
+                    </div>
+                    <div class="cards">
+                        <img src="" alt="" class="card-img">
+                        <p>aaa</p>
+                    </div>
+                </div> 
+            </article>
+            <aside>
+                <svg id="cv-anchor" class="polygon-middle-right">
+                    <use xlink:href="#svg-middle-right">
+                        <symbol id="svg-middle-right" viewbox="0 0 200 30" preserveAspectRatio="none">
+                            <polygon points="0 0,200 0,200 30">
+                        </symbol>
+                    </use>
+                </svg>
+                <div class="cv">
+                    <p class="cv-paragraph">Si vous le souhaitez, mon CV se trouve ici :</p>
+                    <a class="cv-link" href="/">CV</a>
+                </div>
+                <svg id="cv-anchor-end" class="polygon-middle-right-end">
+                    <use xlink:href="#svg-middle-right-end">
+                        <symbol id="svg-middle-right-end" viewbox="0 0 200 30" preserveAspectRatio="none">
+                            <polygon points="200 30,0 30,200 0">
+                        </symbol>
+                    </use>
+                </svg>
+            </aside>
+
+            <article class="article" id="about">
+                <div class="article-about">
+                    <div class="about">
+                        <h2 class="tools">A propos</h2>
+                        <h4>Outils utilisés</h4>
+                        <p>Figma, Git et Github</p>
+                        <p>Environnement Windows et Linux</p>
+                        <p>Conception MCD & MLD</p>
+                        <h4>Compétences</h4>
+                        <p>Curieux, autonome, appliqué, mais avant tout passioné !</p>
+                        <h4>Personnalité</h4>
+                        <div class="typing">
+                            <h5>&#139;h5&#155; J'aime</h5>
+                            <h5 class="writting">hi</h5>
+                        </div>
+                    </div>
+                </div>
+                <div class="article-more">
+                    <h2>Un peu plus ?</h2>
+                    <p>Je suis actuellement à la recherche d'un lieu de travail avec des personnes bieveillantes pour pouvoir continuer à en apprendre toujours plus sur le développement. Idéalement, continuer dans du développement Python serait un must-have pour moi, c'est véritablement un language qui m'a plu instantanément de par sa vérsatilité et sa simplicité, mais rester dans un univers PHP me permet de rester dans ma zone de confort !</p>
+                </div>
+            </article>
+        </section>
+    </main>

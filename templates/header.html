@@ -1,0 +1,53 @@
+<!DOCTYPE html>
+{% load static %}
+<html lang="fr">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Portfolio - {% block titile %}{% endblock %}</title>
+    <link rel="stylesheet" href="https://fonts.googleapis.com/css?family=Assistant">
+    <link rel="stylesheet" href="https://fonts.googleapis.com/css?family=Raleway">
+    <link rel="stylesheet" href="https://fonts.googleapis.com/css?family=Josefin Sans">
+    <link rel="stylesheet" href="https://fonts.googleapis.com/css?family=Patua One">   
+    <link rel="stylesheet" href="{% static 'css/reset.css' %}">
+    <link rel="stylesheet" href="{% static 'css/style.css' %}">
+    <link rel="stylesheet" href="{% static 'css/font-awesome/css/font-awesome.min.css' %}">
+</head>
+<body>
+    <header>
+        <nav class="nav-container">
+            <div class="logo">
+                N.
+            </div>
+            <div class="nav">
+                    <ul class="nav-link-list">
+                        <li class="nav-link-home">
+                            <a href="">Accueil</a>
+                        </li>
+                        <li class="nav-link-projects">
+                            <a href="">Projets</a>
+                        </li>
+                        <li class="nav-link-blog">
+                            <a href="">Contact</a>
+                        </li>
+                    </ul>
+            </div>
+            <div class="social-links">
+                <ul class="social-links-list">
+                    <li>
+                        <i class="fa fa-facebook-official" aria-hidden="true"><a href=""></a></i>
+                    </li>
+                    <li class="nav-spacing">
+                        <i class="fa fa-github-square" aria-hidden="true"><a href=""></a></i>
+                    </li>
+                    <li>
+                        <i class="fa fa-linkedin-square" aria-hidden="true"><a href=""></a></i>
+                    </li>
+                </ul>
+            </div>
+            <div class="menu-mobile open-menu" id="active">
+                <div class="menu-mobile__burger">
+
+                </div>
+            </div>
+        </nav>

@@ -1,0 +1,23 @@
+<div class="contact-wrapper">
+    <div class="contact-title">
+      <h6 data-heading="Contact">Contact</h6>
+    </div>
+    <div class="contact-container">
+        <div class="input-container">
+            <form class="contact-form" method="post">
+            {% csrf_token %}
+            {{ form.as_p }}
+            <div class="form-actions">
+              <button type="submit">Envoyer</button>
+            </div>
+            </form>
+        </div>
+        <div class="social-links-wrapper">
+          <ul class="contact-links">
+            <li><a href="">Email : Talbot.Nicolas-81@outlook.com</a></li>
+            <li><a href=""> Téléphone : 06.31.46.81.44</a></li>
+            <li><a href=""><i class="fa fa-linkedin-square" aria-hidden="true"></i>LinkedIn</a></li>
+          </ul>
+        </div>
+    </div>
+</div>
