@@ -1,7 +1,8 @@
 from django.core.mail import send_mail, BadHeaderError
 from django.http import HttpResponse, HttpResponseRedirect
-from django.shortcuts import render, redirect
+from django.shortcuts import render, redirect, get_object_or_404
 from .forms import ContactForm
+from appfolio.models import Post
 
 # Create your views here.
 def welcome(request):
@@ -31,4 +32,17 @@ def articleView(request):
     return render(request, 'portfolio/articles.html')
 
 def test(request):
-    return render(request, 'portfolio/test.html')
+    posts = Post.objects.all()
+
+    context = {
+        'posts': posts,
+    }
+    return render(request, 'portfolio/test.html', context)
+
+def post_detail(request, post_id):
+    post = get_object_or_404(Post, pk=post_id)
+
+    context = {
+        'post' : post,
+    }
+    return render(request, 'portfolio/post-detail.html', context)

@@ -7,12 +7,18 @@ class PostCategory(models.Model):
     def __str__(self):
         return self.name
 
-# The blog get some posts
+# The portfolio get some posts
 class Post(models.Model):
     title = models.CharField(max_length=100)
     category = models.ForeignKey('PostCategory', null=True, blank=True, on_delete=models.DO_NOTHING)
     published = models.BooleanField(default=False)
     text = models.TextField(blank=True)
+    goal = models.CharField(max_length=100, null=True)
+    goalText = models.TextField(blank=True)
+    languages = models.CharField(max_length=100, blank=True, null = True)
+    languagesText =  models.TextField(blank=True)
+    softwares = models.CharField(max_length=100, blank=True)
+    softwaresText =  models.TextField(blank=True)
     created_at = models.DateTimeField(auto_now_add=True)
 
     def __str__(self):

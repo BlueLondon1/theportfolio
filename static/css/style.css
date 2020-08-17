@@ -403,7 +403,7 @@ h2 {
 }
 
 #projects {
-    min-height: 70vh;
+    min-height: 80vh;
 }
 
 .polygon-middle-right {
@@ -566,20 +566,39 @@ strong.fade {
     justify-content: space-around;
 }
 
+.cards-container > .cards > a {
+    align-self: end;
+    margin: 0 2em 2em 0;
+}
+
 .cards {
     width: calc(100% / 3);
-    height: 30vh;
+    min-height: 30vh;
     background-color: #E5E5E5;
     margin: 1em;
-    box-shadow: 0 4px 8px 0 rgba(0, 0, 0, 0.2), 0 6px 20px 0 rgba(0, 0, 0, 0.19);
+    box-shadow: 0 3px 7px 0 rgba(0, 0, 0, 0.2), 0 6px 20px 0 rgba(0, 0, 0, 0.19);
+    display: flex;
+    flex-direction: column;
 }
 
 .paraphrase {
     display: flex;
+    margin: 1em 1em;
+    color: #2A345E;
+    line-height: 1.1em;
+    letter-spacing: 1px;
+    margin-bottom: 2em;
 }
 
 .cards-container>p {
     align-self: end;
+}
+
+.card-img {
+    height: auto;
+    width: 70%;
+    align-self: center ;
+    margin-top: 1em;
 }
 
 @media only screen and (max-width: 1000px) {
@@ -884,8 +903,12 @@ button[type=submit]:hover {
     font-size: 1.7em;
     font-weight: 600;
     letter-spacing: 1px;
-    color: #0A0C15;
+    color: #E5E5E5;
     line-height: 2em;
+}
+
+.single {
+    color: #0A0C15;
 }
 
 .presentation-position {
@@ -949,7 +972,7 @@ button[type=submit]:hover {
 
 @media only screen and (max-width: 1000px) {
     .article-wrapper {
-        height: 100vh;
+        min-height: 100vh;
         display: flex;
         flex-direction: column;
     }
@@ -957,7 +980,7 @@ button[type=submit]:hover {
     .article-container {
         display: flex;
         width: 100%;
-        height: 100vh;
+        min-height: 60vh;
         
     }
     
@@ -969,7 +992,7 @@ button[type=submit]:hover {
     .image-wrapper {
         display: flex;
         width: 100%;
-        height: 100vh;
+        min-height: 60vh;
     }
 }
 

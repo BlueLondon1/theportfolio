@@ -1,4 +1,6 @@
 {% load static %}
+{% include 'header.html' %}
+{% block title %}{{ post.title }}{% endblock %}
 <div class="project-presentation-wrapper">
     <div class="presentation-position">
         <h1 class="article-title single">{{ post.title }}</h1>
@@ -52,3 +54,4 @@
         </a>
     </button>
 </div>
+{% include 'footer.html' %}
