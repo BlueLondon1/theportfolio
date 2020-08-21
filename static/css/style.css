@@ -404,6 +404,7 @@ h2 {
 
 #projects {
     min-height: 80vh;
+    padding-top: 10vh;
 }
 
 .polygon-middle-right {
@@ -939,13 +940,15 @@ button[type=submit]:hover {
 }
 
 .article-container>p {
-    font-size: 1em;
-    letter-spacing: .5px;
-    font-family: Assistant;
+    font-size: .95em;
+    font-family: Jesphin Sans, Arial, sans-serif;
+    font-weight: lighter;
+    line-height: 1em;
+
 }
 
 .article-title-section {
-    margin: 1em 0 1em 0;
+    margin: 1em 0 .2em 0;
 }
 
 

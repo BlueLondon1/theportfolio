@@ -4,54 +4,89 @@
 <div class="project-presentation-wrapper">
     <div class="presentation-position">
         <h1 class="article-title single">{{ post.title }}</h1>
-        <p class="projects-types">Projet personnel Logo, Site web responsive</p>
-        <p class="projects-tags">développement / design / projet personnel</p>
+        <p class="projects-types">Projet personnel, Site web responsive</p>
+        <a class="projects-tags" href="{% url 'post-category-detail' post.category.pk %}">{{ post.category }} / développement - design</a>
     </div>
 </div>
 <div class="projects-nav">
-    <button class="slide">
-        <a class="previous-project" href="">
-            <i class="fa fa-arrow-left" aria-hidden="true"></i>
-            Projet précédent
-        </a>
-    </button>
-    <button class="slide">
-        <a class="previous-project" href="">
-            Projet suivant
-            <i class="fa fa-arrow-right" aria-hidden="true"></i>
-        </a>
-    </button>
+
+        <button class="slide"> 
+            {% if prevpost %}
+                <a class="previous-project" href="{{ STATIC_URL }}/portfolio/detail/{{ prevpost.pk }}">
+                    <i class="fa fa-arrow-left" aria-hidden="true"></i>
+                    Projet précédent
+                </a>
+            {% else %}
+                <a class="previous-project" href="/">
+                    <i class="fa fa-arrow-left" aria-hidden="true"></i>
+                    Retour à l'accueil
+                </a>
+            {% endif %}
+        </button>
+    
+        <button class="slide">
+            {% if nextpost %}
+                <a class="previous-project" href="{{ STATIC_URL }}/portfolio/detail/{{ nextpost.pk }}">
+                    Projet suivant
+                    <i class="fa fa-arrow-right" aria-hidden="true"></i>
+                </a>
+            {% else %}
+                <a class="previous-project" href="/">
+                    Retour à l'accueil
+                    <i class="fa fa-arrow-right" aria-hidden="true"></i>
+                </a>
+            {% endif %}
+        </button>
+    
 </div>
 {% block content %}
-<div class="article-wrapper">
-    
-    <div class="image-wrapper">
-        <img  class="article-image" src="{% static 'images/michael-michera-by-michael-michera-zsummit-sculpt-off-2017-z.jpg' %}" alt="">
+    <div class="article-wrapper">
+        
+        <div class="image-wrapper">
+            {% if post.article_image %}
+            <img  class="article-image" src="{{ post.article_image.url }}" alt="Image related to the article">
+            {% else %} <img  class="article-image" src="{% static 'images/nofound.jpg' %}" alt="Image related to the article">
+            {% endif %}
+        </div>
+        <div class="article-container">
+            <h2 class="article-title-section"> Le projet</h2>
+            <p> {{ post.text|linebreaks|safe }}</p>
+            <h2 class="article-title-section"> Objectif </h2>
+            <p>{{ post.goalText|linebreaks|safe }}</p>
+            <h2 class="article-title-section"> Languages</h2>
+            <p>{{ post.languagesText|linebreaks|safe }}</p>
+            <h2 class="article-title-section"> Logiciels</h2>
+            <p>{{ post.softwaresText|linebreaks|safe }}</p>
+        </div>
     </div>
-    <div class="article-container">
-        <h2 class="article-title-section"> Le projet</h2>
-        <p> {{ post.text|linebreaks|safe }}</p>
-        <h2 class="article-title-section"> Objectif </h2>
-        <p>{{ post.goalText|linebreaks|safe }}</p>
-        <h2 class="article-title-section"> Languages</h2>
-        <p>{{ post.languagesText|linebreaks|safe }}</p>
-        <h2 class="article-title-section"> Logiciels</h2>
-        <p>{{ post.softwaresText|linebreaks|safe }}</p>
-    </div>
-</div>
 {% endblock content %}
 <div class="projects-nav">
-    <button class="slide">
-        <a class="previous-project" href="">
-            <i class="fa fa-arrow-left" aria-hidden="true"></i>
-            Projet précédent
-        </a>
+    <button class="slide"> 
+        {% if prevpost %}
+            <a class="previous-project" href="{{ STATIC_URL }}/portfolio/detail/{{ prevpost.pk }}">
+                <i class="fa fa-arrow-left" aria-hidden="true"></i>
+                Projet précédent
+            </a>
+        {% else %}
+            <a class="previous-project" href="/">
+                <i class="fa fa-arrow-left" aria-hidden="true"></i>
+                Retour à l'accueil
+            </a>
+        {% endif %}
     </button>
+
     <button class="slide">
-        <a class="previous-project" href="">
-            Projet suivant
-            <i class="fa fa-arrow-right" aria-hidden="true"></i>
-        </a>
+        {% if nextpost %}
+            <a class="previous-project" href="{{ STATIC_URL }}/portfolio/detail/{{ nextpost.pk }}">
+                Projet suivant
+                <i class="fa fa-arrow-right" aria-hidden="true"></i>
+            </a>
+        {% else %}
+            <a class="previous-project" href="/">
+                Retour à l'accueil
+                <i class="fa fa-arrow-right" aria-hidden="true"></i>
+            </a>
+        {% endif %}
     </button>
 </div>
 {% include 'footer.html' %}
