@@ -1,0 +1,46 @@
+{% load static %}
+            <aside>
+                <svg id="cv-anchor" class="polygon-middle-right">
+                    <use xlink:href="#svg-middle-right">
+                        <symbol id="svg-middle-right" viewbox="0 0 200 30" preserveAspectRatio="none">
+                            <polygon points="0 0,200 0,200 30">
+                        </symbol>
+                    </use>
+                </svg>
+                <div class="cv">
+                    <p class="cv-paragraph">Si vous le souhaitez, mon CV se trouve ici :</p>
+                    <a class="cv-link" href="{% static 'pdf/CV.pdf'%}">CV</a>
+                </div>
+                <svg id="cv-anchor-end" class="polygon-middle-right-end">
+                    <use xlink:href="#svg-middle-right-end">
+                        <symbol id="svg-middle-right-end" viewbox="0 0 200 30" preserveAspectRatio="none">
+                            <polygon points="200 30,0 30,200 0">
+                        </symbol>
+                    </use>
+                </svg>
+            </aside>
+
+            <article class="article" id="about">
+                <div class="article-about">
+                    <div class="about">
+                        <h2 class="tools">A propos</h2>
+                        <h4>Outils utilisés</h4>
+                        <p>Figma, Git et Github</p>
+                        <p>Environnement Windows et Linux</p>
+                        <p>Conception MCD & MLD</p>
+                        <h4>Compétences</h4>
+                        <p>Curieux, autonome, appliqué, mais avant tout passioné !</p>
+                        <h4>Personnalité</h4>
+                        <div class="typing">
+                            <h5>&#139;h5&#155; J'aime</h5>
+                            <h5 class="writting">hi</h5>
+                        </div>
+                    </div>
+                </div>
+                <div class="article-more">
+                    <h2>Un peu plus ?</h2>
+                    <p>Je suis actuellement à la recherche d'un lieu de travail avec des personnes bieveillantes pour pouvoir continuer à en apprendre toujours plus sur le développement. Idéalement, continuer dans du développement Python serait un must-have pour moi, c'est véritablement un language qui m'a plu instantanément de par sa vérsatilité et sa simplicité, mais rester dans un univers PHP me permet de rester dans ma zone de confort !</p>
+                </div>
+            </article>
+        </section>
+    </main>

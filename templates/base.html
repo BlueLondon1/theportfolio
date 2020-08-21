@@ -20,7 +20,7 @@
                 </symbol>
             </use>
         </svg>
-        <section class="articles">
+        <section class="articles" id="article-anchor">
             <article class="article" id="languages">
                 <dix class="img-container">
                     <img  class="fallout" src="{% static 'images/Fallout.png' %}" alt="old computer from fallout game">
@@ -54,7 +54,7 @@
                     </p>
                 </div>
             </article>
-            <svg class="polygon-below-left">
+            <svg id="projects-anchor" class="polygon-below-left">
                 <use xlink:href="#svg-below-left">
                     <symbol id="svg-below-left" viewbox="0 0 200 30" preserveAspectRatio="none">
                         <polygon points="200 0,0 30,0 0">
@@ -65,20 +65,30 @@
             <article class="article" id="projects">
                 <h2 class="projects">Projets</h2>
                 <div class="cards-container">
-                    <div class="cards">
-                        <img src="" alt="" class="card-img">
+                    <a class="cards" href="">
+                        <img src="{% static 'images/logo-red.png' %}" alt="Red Dragon" class="card-img">
                         <div class="paraphrase">
-                            <p>aaa</p>
+                            <p>
+                                {{ 'Ostory, c\'est mon projet de fin de formation avec l\'école oClock, après 700 heures de formations intensives! Le but du projet était de créer une application qui reprenait le principe du livre dont vous êtes le héros.'|truncatechars:135 }}
+                            </p>
+                        </div> 
+                    </a>
+                    <a class="cards" href="">
+                        <img src="{% static 'images/Flask.png' %}" alt="Flask Logo" class="card-img">
+                        <div class="paraphrase">
+                            <p>
+                                {{ 'Projet en cours - La page article contient le lien github pour voir le code et la présentation du projet.'|truncatechars:135 }}
+                            </p>
                         </div>
-                    </div>
-                    <div class="cards">
-                        <img src="" alt="" class="card-img">
-                        <p>aaa</p>
-                    </div>
-                    <div class="cards">
-                        <img src="" alt="" class="card-img">
-                        <p>aaa</p>
-                    </div>
+                    </a>
+                    <a class="cards" href="">
+                        <img src="{% static 'images/Flask.png' %}" alt="Flask Logo" class="card-img">
+                        <div class="paraphrase">
+                            <p>
+                                {{ 'Projet en cours - La page article contient le line github pour voir le code et la présentation du projet.'|truncatechars:135 }}
+                            </p>
+                        </div>
+                    </a>
                 </div> 
             </article>
             <aside>
@@ -91,7 +101,7 @@
                 </svg>
                 <div class="cv">
                     <p class="cv-paragraph">Si vous le souhaitez, mon CV se trouve ici :</p>
-                    <a class="cv-link" href="/">CV</a>
+                    <a class="cv-link" href="{% static 'pdf/CV.pdf'%}">CV</a>
                 </div>
                 <svg id="cv-anchor-end" class="polygon-middle-right-end">
                     <use xlink:href="#svg-middle-right-end">

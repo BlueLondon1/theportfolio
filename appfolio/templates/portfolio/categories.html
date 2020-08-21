@@ -1,12 +1,12 @@
-{% load static %}
 {% include 'header.html' %}
-{% include 'intro.html' %}
+{% load static %}
+
 
 {% block content %}
     <article class="article" id="projects">
-        <h2 class="projects">Projets</h2>
+        <h2 class="projects">Projets faits en {{ category.name }} :</h2>
         <div class="cards-container">
-            {% for post in posts %}
+            {% for post in category.post_set.all %}
             <a class="cards" href="{% url 'post-detail' post.pk %}">
                 {% if post.image %}
                 <img src="{{ post.image.url }}" alt="Image visual for the articles" class="card-img">
@@ -22,5 +22,5 @@
     </article>
 {% endblock content %}
 
-{% include 'about.html' %}
+
 {% include 'footer.html' %}
