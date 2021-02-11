@@ -1,6 +1,7 @@
 {% load static %}
 {% include 'header.html' %}
 {% block title %}{{ post.title }}{% endblock %}
+{% block content %}
 <div class="project-presentation-wrapper">
     <div class="presentation-position">
         <h1 class="article-title single">{{ post.title }}</h1>
@@ -9,43 +10,41 @@
     </div>
 </div>
 <div class="projects-nav">
+    <button class="slide"> 
+        {% if prevpost %}
+            <a class="previous-project" href="{{ STATIC_URL }}/portfolio/detail/{{ prevpost.pk }}">
+                <i class="fa fa-arrow-left" aria-hidden="true"></i>
+                Projet précédent
+            </a>
+        {% else %}
+            <a class="previous-project" href="/">
+                <i class="fa fa-arrow-left" aria-hidden="true"></i>
+                Retour à l'accueil
+            </a>
+        {% endif %}
+    </button>
 
-        <button class="slide"> 
-            {% if prevpost %}
-                <a class="previous-project" href="{{ STATIC_URL }}/portfolio/detail/{{ prevpost.pk }}">
-                    <i class="fa fa-arrow-left" aria-hidden="true"></i>
-                    Projet précédent
-                </a>
-            {% else %}
-                <a class="previous-project" href="/">
-                    <i class="fa fa-arrow-left" aria-hidden="true"></i>
-                    Retour à l'accueil
-                </a>
-            {% endif %}
-        </button>
-    
-        <button class="slide">
-            {% if nextpost %}
-                <a class="previous-project" href="{{ STATIC_URL }}/portfolio/detail/{{ nextpost.pk }}">
-                    Projet suivant
-                    <i class="fa fa-arrow-right" aria-hidden="true"></i>
-                </a>
-            {% else %}
-                <a class="previous-project" href="/">
-                    Retour à l'accueil
-                    <i class="fa fa-arrow-right" aria-hidden="true"></i>
-                </a>
-            {% endif %}
-        </button>
-    
+    <button class="slide">
+        {% if nextpost %}
+            <a class="previous-project" href="{{ STATIC_URL }}/portfolio/detail/{{ nextpost.pk }}">
+                Projet suivant
+                <i class="fa fa-arrow-right" aria-hidden="true"></i>
+            </a>
+        {% else %}
+            <a class="previous-project" href="/">
+                Retour à l'accueil
+                <i class="fa fa-arrow-right" aria-hidden="true"></i>
+            </a>
+        {% endif %}
+    </button>  
 </div>
-{% block content %}
+
     <div class="article-wrapper">
         
         <div class="image-wrapper">
-            {% if post.article_image %}
+            {% if post.article_image %} 
             <img  class="article-image" src="{{ post.article_image.url }}" alt="Image related to the article">
-            {% else %} <img  class="article-image" src="{% static 'images/nofound.jpg' %}" alt="Image related to the article">
+            {% else %} <iframe class="article-image" width="560" height="315" src="https://www.youtube.com/embed/mqiEXJaN1ls?start=2246" frameborder="0" allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture" allowfullscreen></iframe>
             {% endif %}
         </div>
         <div class="article-container">
@@ -59,7 +58,6 @@
             <p>{{ post.softwaresText|linebreaks|safe }}</p>
         </div>
     </div>
-{% endblock content %}
 <div class="projects-nav">
     <button class="slide"> 
         {% if prevpost %}
@@ -89,4 +87,5 @@
         {% endif %}
     </button>
 </div>
+{% endblock content %}
 {% include 'footer.html' %}

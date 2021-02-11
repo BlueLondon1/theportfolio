@@ -1,0 +1,30 @@
+{% include 'header.html' %}
+{% load static %}
+
+{% block content %}
+
+<div class="page-wrapper">
+    <h1 class="countdown-title">Durée avant mes 30 ans :</h1>
+    <div class="count-container">
+        <div class="countdown-el day-timer">
+            <p class="big-text" id="days">0</p>
+            <span>jours</span>
+        </div>
+        <div class="countdown-el hours-timer">
+            <p class="big-text" id="hours">0</p>
+            <span>heures</span>
+        </div>
+        <div class="countdown-el minutes-timer">
+            <p class="big-text" id="mins">0</p>
+            <span>mins</span>
+        </div>
+        <div class="countdown-el seconds-timer">
+            <p class="big-text" id="seconds">0</p>
+            <span>secondes</span>
+        </div>
+    </div>
+</div>
+
+{% endblock content%}
+
+{% include 'footer.html' %}

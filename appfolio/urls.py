@@ -8,4 +8,6 @@ urlpatterns = [
     path('portfolio/detail/<int:pk>/', views.post_detail, name='post-detail'),
     path('portfolio/category/<int:pk>/', views.Category.as_view(), name='post-category-detail'),
     path('portfolio/contact/', views.contactView, name='contact'),
+    path('portfolio/', views.successView, name='success'),
+    path('portfolio/timer', views.projectCountdown, name='timer'),
 ]

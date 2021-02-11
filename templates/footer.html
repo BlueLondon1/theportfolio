@@ -4,13 +4,13 @@
         <div class="link-list">
             <ul class="footer-nav">
                 <li> 
-                    <a href="#">Accueil</a>
+                    <a href="{% url 'portfolio'%}">Accueil</a>
                 </li>
                 <li>
-                    <a class="nav-sp" href="#">Projets</a>
+                    <a href="{% url 'portfolio' %}#projects-anchor">Projets</a>
                 </li>
                 <li>
-                    <a href="#">Blog</a>
+                    <a href="{% url 'contact' %}">Contact</a>
                 </li>
             </ul>
         </div>
@@ -37,9 +37,15 @@
 <div class="menu__mobile">
     <nav class="nav__mobile">
         <ul>
-            <li><a href="{% url 'portfolio'%}">Accueil</a></li>
-            <li class="nav-spacing__mobile"><a href="{% url 'portfolio' %}#projects">Projets</a></li>
-            <li><a href="{% url 'contact' %}">Contact</a></li>
+            <li>
+                <a href="{% url 'portfolio'%}">Accueil</a>
+            </li>
+            <li class="nav-spacing__mobile">
+                <a href="{% url 'portfolio' %}#projects-anchor">Projets</a>
+            </li>
+            <li>
+                <a href="{% url 'contact' %}">Contact</a>
+            </li>
         </ul>
     </nav>
     <div class="social-nav__mobile">

@@ -1,4 +1,5 @@
 {% load static %}
+{% block content %}
         <div class="intro-container">
             <div class="intro-article">
                 <div class="intro-title">
@@ -26,7 +27,7 @@
                     <img  class="fallout" src="{% static 'images/Fallout.png' %}" alt="old computer from fallout game">
                 </dix>
                 <div class="skills-container">
-                    <h3>Mes projets</h3>
+                    <h3><a href="{% url 'portfolio' %}#projects-anchor">Mes projets</a></h3>
                     <ul class="btn-small-flex">
                         <li>HTML</li>
                         <li>CSS</li>
@@ -43,14 +44,14 @@
                     </ul>
                 </div>
                 <div class="article-intro"> 
-                    <h2 class="article-title">languages</h2>
+                    <h2 class="article-title article-l">A propos</h2>
                     <p class="article-languages">
-                        Avant de commencer ma formation de Développeur, j'ai essayé d'apprendre à programmer en Python, avant tout pour savoir si programmer me plaisait vraiment. Ce qui est drôle quand on y pense, c'est qu'aujourd'hui, j'ai développé une grande affinité avec les languages back-end. PHP et Python ont été un véritable coup de coeur, j'adore concevoir des sites avec eux.
+                        Pourquoi ce portfolio ? C'est vrai, ce serait quand même dommage de faire de la redite du CV ou de la Lettre de motivation. Allez je vais être fou, ce portfolio va servir à ce que vous appreniez un peu plus à me connaître en tant qu'individu, après tout si on est ammené à se cotoyer entre 8 et 10 h/j il vaut mieux que ce soit dans d'excellentes conditions. C'est partit, je me jète à l'eau (pas de panique, je sais nager). Vous aurez quoi qu'il arrive un vrai CV à la fin du site (non non, pas de lettre de motivation bateau, je me renseigne sur les entreprises avant ;))
                     </p>
                     <p class="article-languages">
-                       Le front-end était quand à lui assez flou au départ, ce n'est qu'en me lançant sur mon portfolio que j'ai vraiment appris à apprécier le fait de devoir tout calculer de A à Z, de la maquette graphique faite avec Figma jusqu'à la réalisation d'une base de données.
+                       Bon, si ce portfolio est là, c'est qu'idéalement, je cherche un job de Developpeur back-end ou fullstack, mais attention quand même, j'ai envoyé une Lettre de motivation à un gros ponte de la justice, vous allez avoir du mal à rivaliser.<a class="bat" href="{% static 'pdf/LMPDF.pdf'%}">Constatez le par vous même.</a>
                     </p>
-                    <p class="article-languages">En bref, j'aspire vraiment à grandir en tant que Dev Web, que ce soit en front-end ou en back-end.
+                    <p class="article-languages">Bon, sa réponse est encodée en BAT36, je n'ai toujours pas réussi à le craquer. Shame on me. 
                     </p>
                 </div>
             </article>
@@ -61,4 +62,6 @@
                     </symbol>
                 </use>
             </svg> 
+
+{% endblock content %}
             

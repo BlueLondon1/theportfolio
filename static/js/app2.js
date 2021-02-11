@@ -1,3 +1,4 @@
+// Start the app
 var app = {  
 
     elements: [],

@@ -73,8 +73,14 @@ TEMPLATES = [
 
 WSGI_APPLICATION = 'portfolio.wsgi.application'
 
-DEFAULT_FROM_EMAIL = 'talbotdfn@gmail.com'
-EMAIL_BACKEND = 'django.core.mail.backends.console.EmailBackend'
+
+EMAIL_BACKEND = 'django.core.mail.backends.smtp.EmailBackend'
+EMAIL_HOST = 'smtp.gmail.com'
+EMAIL_PORT = '587'
+EMAIL_HOST_USER = 'n.talbot.81000@gmail.com'
+EMAIL_HOST_PASSWORD = "T4fff4st"
+EMAIL_USE_TLS = True
+
 
 
 # Database
@@ -128,6 +134,8 @@ STATIC_URL = '/static/'
 STATICFILES_DIRS = [
     os.path.join(BASE_DIR, 'static'),
 ]
+STATIC_ROOT = os.path.join(os.path.dirname(BASE_DIR), "static-root")
 
-MEDIA_ROOT = os.path.join(BASE_DIR, 'media')
+#MEDIA_ROOT = os.path.join(BASE_DIR, 'media')
+MEDIA_ROOT = os.path.join(os.path.dirname(BASE_DIR), "media-root")
 MEDIA_URL = "/media/"

@@ -4,7 +4,6 @@ from django.shortcuts import render, redirect, get_object_or_404
 from .forms import ContactForm
 from appfolio.models import Post, PostCategory
 from django.views.generic import DetailView, ListView
-from django.core.paginator import Paginator
 
 # Create your views here.
 
@@ -17,6 +16,12 @@ def welcome(request):
     }
     return render(request, 'portfolio/index.html', context)
 
+def projectCountdown(request):
+    
+    context = {}
+
+    return render(request, 'portfolio/birthday.html', context)
+
 
 def contactView(request):
     if request.method == 'GET':
@@ -26,13 +31,17 @@ def contactView(request):
         if form.is_valid():
             subject = form.cleaned_data['sujet']
             from_email = form.cleaned_data['email']
-            message = form.cleaned_data['message']
-            try:
-                send_mail(subject, message, from_email, ['talbotdfn@gmail.com'])
-            except BadHeaderError:
-                return HttpResponse('Invalid header found.')
-            return redirect('success')
+            message = "{0} vous a envoyé un message :\n\n{1}".format(from_email, form.cleaned_data['message'])
+            if subject and from_email and message:
+                try:
+                    send_mail(subject, message, from_email, ['n.talbot.81000@gmail.com'])
+                except BadHeaderError:
+                    return HttpResponse('Invalid header found.')
+                return redirect('success')
     return render(request, "portfolio/email.html", {'form': form})
+
+def successView(request):
+    return HttpResponseRedirect('portfolio/index.html')
 
 def post_detail(request, pk):
     template = 'portfolio/post-detail.html'
@@ -52,17 +61,6 @@ def post_detail(request, pk):
     }
 
     return render(request, template , context)
-
-# class PostDetailView(DetailView):
-#     model = Post
-#     template_name = 'portfolio/post-detail.html'
-#     paginate_by = 2
-
-#     def get_context_data(self, **kwargs):
-#         object_list = Post.objects.filter(title=self.object)
-#         context = super(PostDetailView, self).get_context_data(object_list=object_list, **kwargs)
-#         return context
-
 
 class Category(ListView):
 

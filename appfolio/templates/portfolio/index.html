@@ -7,16 +7,16 @@
         <h2 class="projects">Projets</h2>
         <div class="cards-container">
             {% for post in posts %}
-            <a class="cards" href="{% url 'post-detail' post.pk %}">
-                {% if post.image %}
-                <img src="{{ post.image.url }}" alt="Image visual for the articles" class="card-img">
-                {% endif %}
-                <div class="paraphrase">
-                    <p>
-                        {{ post.text|truncatechars:135|safe }}
-                    </p>
-                </div> 
-            </a>
+                    <a class="cards" href="{% url 'post-detail' post.pk %}">
+                        {% if post.image %}
+                        <img src="{{ post.image.url }}" alt="Image visual for the articles" class="card-img">
+                        {% endif %}
+                        <div class="paraphrase">
+                            <p>
+                                {{ post.text|truncatechars:135|safe }}
+                            </p>
+                        </div> 
+                    </a>
             {% endfor %}
         </div> 
     </article>
